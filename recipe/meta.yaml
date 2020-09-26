@@ -1,6 +1,6 @@
 {% set name = "openpathsampling" %}
-{% set version = "1.2.0" %}
-{% set sha256 = "7efc95b18c0f4fc11e901394c6dd781ff28f1fdf522b2f7a2946934b8f423f2f" %}
+{% set version = "1.3.0" %}
+{% set sha256 = "3a91366708051c6b6bb53790c041fe3ebf88eaa140a3010018da5a3bc92bd71d" %}
 
 package:
   name: {{ name|lower }}
@@ -13,8 +13,8 @@ source:
 build:
   number: 0
   # note to self: if we add win support, switch skip line to noarch: python
-  skip: True  # [win]
-  script: "MPLBACKEND=Agg {{ PYTHON }} -m pip install . -vv"
+  skip: true  # [win]
+  script: MPLBACKEND=Agg {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -43,7 +43,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A Python package for path sampling simulations'
+  summary: A Python package for path sampling simulations
 
   # The remaining entries in this section are optional, but recommended.
   description: |
