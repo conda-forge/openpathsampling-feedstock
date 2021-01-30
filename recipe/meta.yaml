@@ -1,6 +1,6 @@
 {% set name = "openpathsampling" %}
-{% set version = "1.4.1" %}
-{% set sha256 = "dd7eb4c95e2657d00b1c433b40bd792d85de41b38d84494086836cd21e0f4148" %}
+{% set version = "1.4.2" %}
+{% set sha256 = "14b651fcae1bd1d6857d298b03cbdace2b0243939e21652fadd344dba668c72b" %}
 
 package:
   name: {{ name|lower }}
@@ -31,7 +31,7 @@ requirements:
     - networkx
     - netcdf4
     - svgwrite
-    - ujson <2
+    - ujson !=2.*,!=3.*,!=4.0.0,!=4.0.1
     - mdtraj
 
 test:
