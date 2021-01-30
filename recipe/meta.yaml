@@ -31,7 +31,7 @@ requirements:
     - networkx
     - netcdf4
     - svgwrite
-    - ujson <2
+    - ujson !=2.*,!=3.*,!=4.0.0,!=4.0.1
     - mdtraj
 
 test:
