@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   # note to self: if we add win support, switch skip line to noarch: python
   skip: true  # [win]
   script: MPLBACKEND=Agg {{ PYTHON }} -m pip install . -vv
