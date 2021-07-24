@@ -1,6 +1,6 @@
 {% set name = "openpathsampling" %}
-{% set version = "1.5.0" %}
-{% set sha256 = "402dd80269fb32183e6afe78ef9bf177e269f021c37466621344ee0ae8df4b97" %}
+{% set version = "1.5.1" %}
+{% set sha256 = "e4d99bb954e7bd616fb7e54287d081063dd076359c02ef91d259be3af369193b" %}
 
 package:
   name: {{ name|lower }}
