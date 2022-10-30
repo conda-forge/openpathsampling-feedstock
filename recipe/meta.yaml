@@ -1,42 +1,45 @@
 {% set name = "openpathsampling" %}
 {% set version = "1.5.2" %}
-{% set sha256 = "beb8b2cde0f03d8746e244f9a22312277278cb3d9b4c602310562fa9a36de37c" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openpathsampling-{{ version }}.tar.gz
+  sha256: beb8b2cde0f03d8746e244f9a22312277278cb3d9b4c602310562fa9a36de37c
 
 build:
-  number: 0
-  # note to self: if we add win support, switch skip line to noarch: python
-  skip: true  # [win]
+  noarch: python
   script: MPLBACKEND=Agg {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python
+    - python >=3.6
     - future
     - psutil
     - numpy
     - scipy
     - pandas
-    - matplotlib-base
-    - networkx
     - netcdf4
     - svgwrite
+    - networkx
+    - matplotlib-base
     - ujson !=2.*,!=3.*,!=4.0.0,!=4.0.1
     - mdtraj
+    - __unix
 
 test:
   imports:
     - openpathsampling
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/openpathsampling/openpathsampling
