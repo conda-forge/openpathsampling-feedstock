@@ -16,10 +16,10 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >3.7,<3.12
     - pip
   run:
-    - python >=3.6
+    - python >3.7,<3.12
     - future
     - psutil
     - numpy
@@ -29,7 +29,9 @@ requirements:
     - svgwrite
     - networkx
     - matplotlib-base
-    - ujson !=2.*,!=3.*,!=4.0.0,!=4.0.1
+    - ujson >=4.0.2
+    - dill
+    - sqlalchemy >=1.4.1
     - mdtraj
     - __unix
 
