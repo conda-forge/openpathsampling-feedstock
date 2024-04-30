@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >3.7,<3.12
+    - python >=3.10
     - pip
   run:
-    - python >3.7,<3.12
+    - python >=3.10
     - future
     - psutil
-    - numpy
+    - numpy <2.0
     - scipy
     - pandas
     - netcdf4
