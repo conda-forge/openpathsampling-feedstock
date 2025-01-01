@@ -1,3 +1,4 @@
+{% set python_min = '3.10' %}
 {% set name = "openpathsampling" %}
 {% set version = "1.7.0" %}
 
@@ -6,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openpathsampling-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/openpathsampling-{{ version }}.tar.gz
   sha256: 9f717bc283c45effded857ea51697eb3f9604dee4186c792869b0fb1997a613e
 
 build:
   noarch: python
   script: MPLBACKEND=Agg {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python >=3.10
+    - python >={{ python_min }}
     - future
     - psutil
     - numpy <2.0
@@ -43,6 +44,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/openpathsampling/openpathsampling
